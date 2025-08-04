@@ -1,0 +1,32 @@
+{
+    "id": "ithaca-york-fire-alarm-monitor",
+    "name": "Ithaca York High School Fire Alarm System Monitor",
+    "publisher": "Zephplays134",
+    "version": "1.0.0.0",
+    "brief": "Real-time monitoring system for Ithaca York High School fire alarm status",
+    "description": "This addon provides real-time monitoring capabilities for the fire alarm system at Ithaca York High School. It includes status tracking, alert management, and reporting features.",
+    "privacyStatement": "https://github.com/zephplays134/ithaca-york-fire-alarm-monitor",
+    "EULA": "https://github.com/zephplays134/ithaca-york-fire-alarm-monitor/blob/main/LICENSE",
+    "help": "https://github.com/zephplays134/ithaca-york-fire-alarm-monitor",
+    "url": "https://github.com/zephplays134/ithaca-york-fire-alarm-monitor",
+    "logo": "./res/logo.png",
+    "dependencies": [],
+    "screenshots": [],
+    "platform": "1.0.0.0",
+    "application": "22.0.0.0",
+    "idRanges": [
+        {
+            "from": 50100,
+            "to": 50149
+        }
+    ],
+    "resourceExposurePolicy": {
+        "allowDebugging": true,
+        "allowDownloadingSource": false,
+        "includeSourceInSymbolFile": false
+    },
+    "runtime": "11.0",
+    "features": [
+        "TranslationFile"
+    ]
+}
