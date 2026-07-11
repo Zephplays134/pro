@@ -1,0 +1,255 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #0b3d59 0%, #145374 40%, #1c6ea4 100%);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.ocean {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(28,110,164,0.3), rgba(4,30,50,0.9));
+  z-index: 0;
+}
+
+.ocean::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 200%;
+  height: 20px;
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,0.15) 0 40px, transparent 40px 80px);
+  animation: wave 6s linear infinite;
+}
+
+@keyframes wave {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.ship {
+  position: fixed;
+  bottom: 15%;
+  font-size: 60px;
+  z-index: 1;
+  animation: bob 3s ease-in-out infinite, sail 25s linear infinite;
+  opacity: 0.85;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(-2deg); }
+}
+
+@keyframes sail {
+  0% { left: -10%; }
+  100% { left: 110%; }
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 6%;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.badge {
+  background: #ffd23f;
+  color: #0b3d59;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 5%;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  letter-spacing: 2px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+h1 span {
+  color: #ffd23f;
+}
+
+.subtitle {
+  max-width: 600px;
+  margin: 20px 0 36px;
+  font-size: 1.05rem;
+  color: #dceefc;
+  line-height: 1.6;
+}
+
+.countdown {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.time-box {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 16px 20px;
+  min-width: 80px;
+}
+
+.time-box span {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffd23f;
+}
+
+.time-box label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #cfe8f7;
+}
+
+#notify-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#notify-form input {
+  padding: 14px 18px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  width: 280px;
+  font-size: 0.95rem;
+}
+
+#notify-form button {
+  background: #ffd23f;
+  color: #0b3d59;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#notify-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255,210,63,0.4);
+}
+
+.confirm-msg {
+  margin-top: 14px;
+  color: #9dffb0;
+  font-weight: 600;
+  min-height: 20px;
+}
+
+.features {
+  position: relative;
+  z-index: 2;
+  background: #072439;
+  padding: 70px 6%;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #ffd23f;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 28px 20px;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255,255,255,0.1);
+}
+
+.feature-card .icon {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.feature-card h3 {
+  margin-bottom: 8px;
+  color: #ffd23f;
+}
+
+.feature-card p {
+  color: #cfe8f7;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 30px;
+  background: #041b2b;
+  color: #9fc4d8;
+  font-size: 0.9rem;
+}
+
+footer .small {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
